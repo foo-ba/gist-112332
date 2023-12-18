@@ -15,7 +15,7 @@ const createUrl = function(code, start, end) {
 
 const urlParams = new URLSearchParams(window.location.search);
 document.getElementById("fr").src = createUrl(urlParams.get('code'), urlParams.get('start'), urlParams.get('end'));
-setTimeout(function(){document.getElementById('hide').style.display='block';}, 3 * 1000 * (parseInt(urlParams.get('end'))-parseInt(urlParams.get('start'))));
+setTimeout(function(){document.getElementById('hide').style.display='block';}, 2 * 1000 * (parseInt(urlParams.get('end'))-parseInt(urlParams.get('start'))));
 </script>
 </body>
 </html>
