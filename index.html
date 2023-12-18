@@ -1,8 +1,20 @@
 <!DOCTYPE html>
-<body>
-  <div style="filter: blur(20px)">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/H5v3kku4y6Q?start=10&end=15&autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<html>
+<head>
+</head>
+<body onclick="document.getElementsByTagName('div')[2].style.display='block';">
+  <div style="filter: blur(60px); position: relative; overflow: hidden; max-height: 200px;">
+    <iframe id="fr" width="540" height="360" style="margin-top:-80px;" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
   </div>
-  </div>
+  <div style="position: absolute; top: 100px; margin-top: -20px; height: 40px; pointer-events: none; left: 270px; margin-left: -20px; width: 40px; text-align: center; font-size: 50px;">▶️</div>
+<div style="display: none; position: fixed; inset: 0px; background-color: white;"></div>
+<script>
+const createUrl = function(code, start, end) {
+	return "https://www.youtube.com/embed/" + code + "?start=" + start + "&end=" + end + "&autoplay=0";
+}
+
+const urlParams = new URLSearchParams(window.location.search);
+document.getElementById("fr").src = createUrl(urlParams.get('code'), urlParams.get('start'), urlParams.get('end'));
+</script>
 </body>
 </html>
