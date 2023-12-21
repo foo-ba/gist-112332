@@ -27,7 +27,7 @@ const retry = function() {
 	document.getElementById('app').style.display = 'none';
 	document.getElementById('clickity').style.display='block';
 	document.getElementById('hide').style.display='none';
-	document.getElementById('fr').src = createUrl(urlParams.get('code'), urlParams.get('start'), urlParams.get('end')) + "#" + Math.random().toString();
+	document.getElementById('fr').src = createUrl(urlParams.get('code'), urlParams.get('start'), urlParams.get('end')) + "&" + Math.random().toString();
 	setTimeout(function() {document.getElementById('app').style.display='block';}, 2000);
 }
 retry();
