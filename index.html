@@ -22,17 +22,17 @@ const clicked = function() {
 	setTimeout(function(){document.getElementById('hide').style.display='block';}, 2000);
 }
 
+const urlParams = new URLSearchParams(window.location.search);
 const retry = function() {
 	document.getElementById('app').style.display = 'none';
 	document.getElementById('clickity').style.display='block';
+	document.getElementById('hide').style.display='none';
 	document.getElementById('fr').src = createUrl(urlParams.get('code'), urlParams.get('start'), urlParams.get('end')) + "#" + Math.random().toString();
 	setTimeout(function() {document.getElementById('app').style.display='block';}, 2000);
 }
+retry();
 
-const urlParams = new URLSearchParams(window.location.search);
-document.getElementById('fr').src = createUrl(urlParams.get('code'), urlParams.get('start'), urlParams.get('end'));
 
-setTimeout(function() {document.getElementById('app').style.display='block';}, 2000);
 </script>
 </body>
 </html>
